@@ -75,3 +75,12 @@ footer p{font-size:11px;color:#6673c1}
   .content-head{align-items:start;flex-direction:column}.filters{width:100%;overflow:auto}
   h1{font-size:22px}
 }
+.juicy-ad {
+  min-height: 250px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px;
+}
