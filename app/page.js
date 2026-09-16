@@ -49,7 +49,13 @@ export default function Home() {
 
       <nav className="topnav">
         {["HOME", "VIDEOS", "CATEGORIES", "POPULAR", "NEW", "LIVE", "STORIES", "COMMUNITY"].map((item, i) => (
-          <a href="#" className={i === 0 ? "active" : ""} key={item}>{item}</a>
+          <a
+  href="https://www.xnxx.com/"
+  className={i === 0 ? "active" : ""}
+  key={item}
+>
+  {item}
+</a>
         ))}
       </nav>
 
@@ -60,13 +66,13 @@ export default function Home() {
             <button>A-Z</button>
           </div>
           <div className="side-links">
-            <a href="#"><Icon>◷</Icon> History</a>
+            <a href="https://www.xnxx.com/"><Icon>◷</Icon> History</a>
             <a href="#"><Icon>▣</Icon> Today's selection</a>
             <a href="#"><Icon>★</Icon> Suggestions</a>
             <a href="#"><Icon>♛</Icon> Premium</a>
           </div>
           <h3>Categories</h3>
-          {categories.map(c => <a href="#" key={c}>{c}</a>)}
+          {categories.map(c => <a href="https://www.xnxx.com/" key={c}>{c}</a>)}
         </aside>
 
         <section className="content">
@@ -104,13 +110,13 @@ export default function Home() {
           <div className="grid">
             {cards.map(([title, views, duration, image]) => (
               <article className="card" key={title}>
-                <a href="#" className="thumb">
+                <a href="https://www.xnxx.com/" className="thumb">
                   <img src={"/" + image} alt="" />
                   <span className="duration">{duration}</span>
                   <span className="play">▶</span>
                 </a>
                 <div className="card-body">
-                  <a href="#" className="title">{title}</a>
+                  <a href="https://www.xnxx.com/" className="title">{title}</a>
                   <div className="meta"><span>{views}</span><span>HD</span></div>
                 </div>
               </article>
@@ -136,4 +142,3 @@ export default function Home() {
       </footer>
     </main>
   );
-}
