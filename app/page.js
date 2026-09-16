@@ -1,10 +1,34 @@
+"use client";
+
 import Script from "next/script";
 
+const XNXX_URL = "https://www.xnxx.com/";
+
 const categories = [
-  "Today's Selection", "History", "Popular", "New Videos", "Trending",
-  "Amateur", "Couples", "MILF", "Lesbian", "Gay", "Big Ass", "Big Dick",
-  "Anal", "Blonde", "Brunette", "Ebony", "Asian", "Latina", "Mature",
-  "Teen 18+", "Threesome", "Hardcore", "Public", "Roleplay"
+  "Today's Selection",
+  "History",
+  "Popular",
+  "New Videos",
+  "Trending",
+  "Amateur",
+  "Couples",
+  "MILF",
+  "Lesbian",
+  "Gay",
+  "Big Ass",
+  "Big Dick",
+  "Anal",
+  "Blonde",
+  "Brunette",
+  "Ebony",
+  "Asian",
+  "Latina",
+  "Mature",
+  "Teen 18+",
+  "Threesome",
+  "Hardcore",
+  "Public",
+  "Roleplay",
 ];
 
 const cards = [
@@ -16,129 +40,366 @@ const cards = [
   ["Trending Video 06", "31,205 views", "09:51", "thumb-6.svg"],
   ["Popular Video 07", "22,018 views", "18:20", "thumb-7.svg"],
   ["New Upload 08", "6,745 views", "07:34", "thumb-8.svg"],
-  ["Featured Video 09", "15,903 views", "11:46", "thumb-9.svg"]
+  ["Featured Video 09", "15,903 views", "11:46", "thumb-9.svg"],
 ];
 
 function Icon({ children }) {
-  return <span className="icon" aria-hidden="true">{children}</span>;
+  return (
+    <span className="icon" aria-hidden="true">
+      {children}
+    </span>
+  );
+}
+
+function ExternalLink({ children, className = "", ...props }) {
+  return (
+    <a
+      href={XNXX_URL}
+      className={className}
+      {...props}
+    >
+      {children}
+    </a>
+  );
 }
 
 export default function Home() {
   return (
     <main>
+      {/* AGE BAR */}
       <div className="agebar">
         <span>18+ ADULT CONTENT</span>
-        <span>By entering this website you confirm you are of legal age.</span>
-        <button>Enter</button>
+
+        <span>
+          By entering this website you confirm you are of legal age.
+        </span>
+
+        <ExternalLink>
+          <button>Enter</button>
+        </ExternalLink>
       </div>
 
+      {/* HEADER */}
       <header className="header">
-        <div className="brand">XXNXX<span>.COM</span></div>
-        <div className="tagline">FREE ADULT VIDEOS</div>
+        <ExternalLink className="brand-link">
+          <div className="brand">
+            XXNXX<span>.COM</span>
+          </div>
+
+          <div className="tagline">
+            FREE ADULT VIDEOS
+          </div>
+        </ExternalLink>
+
+        {/* ACCOUNT BUTTONS */}
         <div className="account">
-          <button title="Notifications"><Icon>●</Icon></button>
-          <button title="Settings"><Icon>⚙</Icon></button>
-          <button className="login">Login</button>
-          <button className="register">Register</button>
+          <ExternalLink title="Notifications">
+            <Icon>●</Icon>
+          </ExternalLink>
+
+          <ExternalLink title="Settings">
+            <Icon>⚙</Icon>
+          </ExternalLink>
+
+          <ExternalLink className="login">
+            Login
+          </ExternalLink>
+
+          <ExternalLink className="register">
+            Register
+          </ExternalLink>
         </div>
+
+        {/* SEARCH */}
         <div className="search">
-          <input placeholder="Search videos, categories..." />
-          <button><Icon>⌕</Icon> Search</button>
+          <input
+            type="search"
+            placeholder="Search videos, categories..."
+          />
+
+          <ExternalLink className="search-button">
+            <Icon>⌕</Icon>
+            Search
+          </ExternalLink>
         </div>
       </header>
 
+      {/* TOP NAVIGATION */}
       <nav className="topnav">
-        {["HOME", "VIDEOS", "CATEGORIES", "POPULAR", "NEW", "LIVE", "STORIES", "COMMUNITY"].map((item, i) => (
-          <a
-  href="https://www.xnxx.com/"
-  className={i === 0 ? "active" : ""}
-  key={item}
->
-  {item}
-</a>
+        {[
+          "HOME",
+          "VIDEOS",
+          "CATEGORIES",
+          "POPULAR",
+          "NEW",
+          "LIVE",
+          "STORIES",
+          "COMMUNITY",
+        ].map((item, index) => (
+          <ExternalLink
+            href={XNXX_URL}
+            className={index === 0 ? "active" : ""}
+            key={item}
+          >
+            {item}
+          </ExternalLink>
         ))}
       </nav>
 
+      {/* MAIN PAGE */}
       <div className="page">
+
+        {/* SIDEBAR */}
         <aside className="sidebar">
+
           <div className="side-tabs">
-            <button className="selected">Top</button>
-            <button>A-Z</button>
+            <ExternalLink className="selected">
+              Top
+            </ExternalLink>
+
+            <ExternalLink>
+              A-Z
+            </ExternalLink>
           </div>
+
           <div className="side-links">
-            <a href="https://www.xnxx.com/"><Icon>◷</Icon> History</a>
-            <a href="#"><Icon>▣</Icon> Today's selection</a>
-            <a href="#"><Icon>★</Icon> Suggestions</a>
-            <a href="#"><Icon>♛</Icon> Premium</a>
+
+            <ExternalLink>
+              <Icon>◷</Icon>
+              History
+            </ExternalLink>
+
+            <ExternalLink>
+              <Icon>▣</Icon>
+              Today's selection
+            </ExternalLink>
+
+            <ExternalLink>
+              <Icon>★</Icon>
+              Suggestions
+            </ExternalLink>
+
+            <ExternalLink>
+              <Icon>♛</Icon>
+              Premium
+            </ExternalLink>
+
           </div>
+
           <h3>Categories</h3>
-          {categories.map(c => <a href="https://www.xnxx.com/" key={c}>{c}</a>)}
+
+          {categories.map((category) => (
+            <ExternalLink key={category}>
+              {category}
+            </ExternalLink>
+          ))}
+
         </aside>
 
+        {/* CONTENT */}
         <section className="content">
+
+          {/* CONTENT HEADER */}
           <div className="content-head">
+
             <div>
               <h1>FREE ADULT VIDEOS</h1>
-              <p>Explore featured, trending and newly uploaded videos.</p>
+
+              <p>
+                Explore featured, trending and newly uploaded videos.
+              </p>
             </div>
+
+            {/* FILTERS */}
             <div className="filters">
-              <button className="filter active">Latest</button>
-              <button className="filter">Popular</button>
-              <button className="filter">Top Rated</button>
+
+              <ExternalLink className="filter active">
+                Latest
+              </ExternalLink>
+
+              <ExternalLink className="filter">
+                Popular
+              </ExternalLink>
+
+              <ExternalLink className="filter">
+                Top Rated
+              </ExternalLink>
+
             </div>
+
           </div>
 
+          {/* JUICYADS 300x250 */}
           <div className="ad-slot juicy-ad">
-            <div className="ad-label">ADVERTISEMENT</div>
+
+            <div className="ad-label">
+              ADVERTISEMENT
+            </div>
+
             <div className="ad-frame">
+
               <Script
                 src="https://poweredby.jads.co/js/jads.js"
                 strategy="afterInteractive"
                 data-cfasync="false"
               />
-              <ins id="1126927" data-width="300" data-height="250"></ins>
+
+              <ins
+                id="1126927"
+                data-width="300"
+                data-height="250"
+              />
+
               <Script
                 id="juicyads-zone-1126927"
                 strategy="afterInteractive"
                 data-cfasync="false"
               >
-                {`(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1126927});`}
+                {`
+                  (adsbyjuicy = window.adsbyjuicy || []).push({
+                    'adzone': 1126927
+                  });
+                `}
               </Script>
+
             </div>
           </div>
 
+          {/* VIDEO GRID */}
           <div className="grid">
-            {cards.map(([title, views, duration, image]) => (
-              <article className="card" key={title}>
-                <a href="https://www.xnxx.com/" className="thumb">
-                  <img src={"/" + image} alt="" />
-                  <span className="duration">{duration}</span>
-                  <span className="play">▶</span>
-                </a>
-                <div className="card-body">
-                  <a href="https://www.xnxx.com/" className="title">{title}</a>
-                  <div className="meta"><span>{views}</span><span>HD</span></div>
-                </div>
-              </article>
-            ))}
+
+            {cards.map(
+              ([title, views, duration, image]) => (
+
+                <article
+                  className="card"
+                  key={title}
+                >
+
+                  {/* VIDEO THUMBNAIL */}
+                  <ExternalLink className="thumb">
+
+                    <img
+                      src={`/${image}`}
+                      alt=""
+                    />
+
+                    <span className="duration">
+                      {duration}
+                    </span>
+
+                    <span className="play">
+                      ▶
+                    </span>
+
+                  </ExternalLink>
+
+                  {/* VIDEO DETAILS */}
+                  <div className="card-body">
+
+                    <ExternalLink className="title">
+                      {title}
+                    </ExternalLink>
+
+                    <div className="meta">
+
+                      <span>
+                        {views}
+                      </span>
+
+                      <span>
+                        HD
+                      </span>
+
+                    </div>
+
+                  </div>
+
+                </article>
+
+              )
+            )}
+
           </div>
 
-          <div className="ad-slot large">ADVERTISEMENT</div>
+          {/* SECOND ADVERTISEMENT SLOT */}
+          <div className="ad-slot large">
+            ADVERTISEMENT
+          </div>
 
+          {/* PAGINATION */}
           <div className="pagination">
-            <button className="current">1</button><button>2</button><button>3</button>
-            <button>4</button><button>5</button><button>Next ›</button>
+
+            <ExternalLink className="current">
+              1
+            </ExternalLink>
+
+            <ExternalLink>
+              2
+            </ExternalLink>
+
+            <ExternalLink>
+              3
+            </ExternalLink>
+
+            <ExternalLink>
+              4
+            </ExternalLink>
+
+            <ExternalLink>
+              5
+            </ExternalLink>
+
+            <ExternalLink>
+              Next ›
+            </ExternalLink>
+
           </div>
+
         </section>
       </div>
 
+      {/* FOOTER */}
       <footer>
-        <div className="footer-brand">XXNXX.COM</div>
+
+        <ExternalLink className="footer-brand">
+          XXNXX.COM
+        </ExternalLink>
+
         <div className="footer-links">
-          <a href="#">Terms</a><a href="#">Privacy</a><a href="#">DMCA</a>
-          <a href="#">2257</a><a href="#">Contact</a><a href="#">Report Content</a>
+
+          <ExternalLink>
+            Terms
+          </ExternalLink>
+
+          <ExternalLink>
+            Privacy
+          </ExternalLink>
+
+          <ExternalLink>
+            DMCA
+          </ExternalLink>
+
+          <ExternalLink>
+            2257
+          </ExternalLink>
+
+          <ExternalLink>
+            Contact
+          </ExternalLink>
+
+          <ExternalLink>
+            Report Content
+          </ExternalLink>
+
         </div>
-        <p>© 2026 XXNXX.COM. All rights reserved. 18+ only.</p>
+
+        <p>
+          © 2026 XXNXX.COM. All rights reserved. 18+ only.
+        </p>
+
       </footer>
+
     </main>
   );
+}
