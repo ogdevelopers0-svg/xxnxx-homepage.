@@ -2,7 +2,10 @@ import "./globals.css";
 
 export const metadata = {
   title: "XXNXX.COM — Adult Video Platform",
-  description: "XXNXX.COM adult video platform homepage"
+  description: "XXNXX.COM adult video platform homepage",
+  other: {
+    "juicyads-site-verification": "84c40e41e83634869bdc34d63cd1de8"
+  }
 };
 
 export default function RootLayout({ children }) {
