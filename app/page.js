@@ -83,26 +83,23 @@ export default function Home() {
           </div>
 
           <div className="ad-slot juicy-ad">
-  <Script
-    src="https://poweredby.jads.co/js/jads.js"
-    strategy="afterInteractive"
-    data-cfasync="false"
-  />
-
-  <ins
-    id="1126927"
-    data-width="300"
-    data-height="250"
-  />
-
-  <Script
-    id="juicyads-zone-1126927"
-    strategy="afterInteractive"
-    data-cfasync="false"
-  >
-    {`(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1126927});`}
-  </Script>
-</div>
+            <div className="ad-label">ADVERTISEMENT</div>
+            <div className="ad-frame">
+              <Script
+                src="https://poweredby.jads.co/js/jads.js"
+                strategy="afterInteractive"
+                data-cfasync="false"
+              />
+              <ins id="1126927" data-width="300" data-height="250"></ins>
+              <Script
+                id="juicyads-zone-1126927"
+                strategy="afterInteractive"
+                data-cfasync="false"
+              >
+                {`(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1126927});`}
+              </Script>
+            </div>
+          </div>
 
           <div className="grid">
             {cards.map(([title, views, duration, image]) => (
